@@ -1,6 +1,6 @@
 
 
-
+const ticket = document.getElementById('ticket');
 
 submit.addEventListener('click', function(){
 
@@ -39,6 +39,16 @@ submit.addEventListener('click', function(){
         //pxb20round = variabile contenente il prezzo del biglietto scontato del 20% mostrando fino alla seconda cifra decimale
         let sconto20arr = prezzobiglietto - sconto20;//number
         console.log('Totale con sconto applicato =',parseFloat(sconto20arr.toFixed(2)),'euro');
+        
+        ticket.innerHTML = `
+            <span>i km da percorrere sono ${km}</span>
+            <br>
+            <span>Il prezzo del biglietto e: ${prezzobiglietto.toFixed(2)}</span>
+            <br>
+            <span>Sconto applicato del 40%: ${sconto20.toFixed(2)} </span>
+            <br>
+            <span>Il prezzo del biglietto e: ${sconto20arr.toFixed(2)}</span>
+    `
     
     }//eta' over 65
     else if(eta == 'over'){
@@ -51,13 +61,30 @@ submit.addEventListener('click', function(){
     let sconto40arr = prezzobiglietto - sconto40;//number
     console.log('Totale con sconto applicato =',parseFloat(sconto40arr.toFixed(2)),'euro');
 
+    ticket.innerHTML = `
+            <span>i km da percorrere sono ${km}</span>
+            <br>
+            <span>Il prezzo del biglietto e: ${prezzobiglietto.toFixed(2)}</span>
+            <br>
+            <span>Sconto applicato del 40%: ${sconto40.toFixed(2)} </span>
+            <br>
+            <span>Il prezzo del biglietto e: ${sconto40arr.toFixed(2)}</span>
+    `
+
     }//eta' tra i 18 e i 65 anni
     else if(eta == 'default'){
 
     //stampiamo in console il prezzo del biglietto senza sconti
     console.log('nessuno sconto applicato');
     console.log('il biglietto costa =', parseFloat(prezzobiglietto.toFixed(2)),'euro');
-
+    
+    ticket.innerHTML = `
+            <span>i km da percorrere sono: ${km}</span>
+            <br>
+            <span>Nessuno sconto applicato</span>
+            <br>
+            <span>Il prezzo del biglietto e: ${prezzobiglietto.toFixed(2)}</span>
+    `
     }
 
     document.getElementById('km').value = "";
