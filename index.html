@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biglietto treno</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
-    <h1>Biglietteria</h1>
-    <input id="name" type="text" placeholder="Inserisci nome passeggero">
-    <input id="km" type="text" placeholder="Km da percorrere">
-    <!-- <input id="eta" type="text"> -->
-    <select name="eta" id="eta">
-        <option value="default">Maggiorenne</option>
-        <option value="min">Minorenne</option>
-        <option value="over">Over 65</option>
-    </select>
-    
-    <div id="ticket"></div>
 
-    <input id="submit" type="submit" value="submit">
+<body>
+    <div class="text-center bg-secondary">
+        <h1 class="py-2">Biglietteria</h1>
+        <h2 class="py-4">Calcola il prezzo del tuo biglietto</h2>
+        <div class="form">
+            <input id="name" type="text" placeholder="Inserisci nome passeggero">
+            <input id="km" type="text" placeholder="Km da percorrere">
+            <!-- <input id="eta" type="text"> -->
+            <select name="eta" id="eta">
+                <option value="default">Maggiorenne</option>
+                <option value="min">Minorenne</option>
+                <option value="over">Over 65</option>
+            </select>
+            <input id="submit" type="submit" value="submit">
+        </div>
+    </div>
+    <div class="text-center">
+        <h1>Riepilogo biglietto</h1>
+    </div>
+    <div class="text-center" id="ticket"></div>
+
+
     <script src="./js/script.js"></script>
 </body>
+
 </html>
