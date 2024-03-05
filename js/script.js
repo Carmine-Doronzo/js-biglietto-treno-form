@@ -1,8 +1,9 @@
 
 
-const ticket = document.getElementById('ticket');
+
 
 submit.addEventListener('click', function(){
+    const ticket = document.getElementById('ticket');
 
     //raccogliamo il dato kilometri
     let km = document.getElementById('km').value;
@@ -10,6 +11,13 @@ submit.addEventListener('click', function(){
     //raccogliamo il dato eta' 
     let eta = document.getElementById('eta').value;
 
+    const name = document.getElementById('name').value;
+
+    console.log(name);
+
+    if(name != '' && !isNaN(km) && km > 0 && isNaN(name)){
+
+    
     
     
 
@@ -41,6 +49,8 @@ submit.addEventListener('click', function(){
         console.log('Totale con sconto applicato =',parseFloat(sconto20arr.toFixed(2)),'euro');
         
         ticket.innerHTML = `
+            <span>Nome del passeggero:${name}</span> 
+            <br>
             <span>i km da percorrere sono ${km}</span>
             <br>
             <span>Il prezzo del biglietto e: ${prezzobiglietto.toFixed(2)}</span>
@@ -62,6 +72,8 @@ submit.addEventListener('click', function(){
     console.log('Totale con sconto applicato =',parseFloat(sconto40arr.toFixed(2)),'euro');
 
     ticket.innerHTML = `
+            <span>Nome del passeggero:${name}</span> 
+            <br>
             <span>i km da percorrere sono ${km}</span>
             <br>
             <span>Il prezzo del biglietto e: ${prezzobiglietto.toFixed(2)}</span>
@@ -79,6 +91,8 @@ submit.addEventListener('click', function(){
     console.log('il biglietto costa =', parseFloat(prezzobiglietto.toFixed(2)),'euro');
     
     ticket.innerHTML = `
+            <span>Nome del passeggero:${name}</span> 
+            <br>
             <span>i km da percorrere sono: ${km}</span>
             <br>
             <span>Nessuno sconto applicato</span>
@@ -86,9 +100,14 @@ submit.addEventListener('click', function(){
             <span>Il prezzo del biglietto e: ${prezzobiglietto.toFixed(2)}</span>
     `
     }
-
+    document.getElementById('name').value = "";
     document.getElementById('km').value = "";
     document.getElementById('eta').value = "";
 
+
+}else{
+    ticket.innerHTML =`<span>Inserisci dei valori validi</span>`
 }
+}
+
 )
