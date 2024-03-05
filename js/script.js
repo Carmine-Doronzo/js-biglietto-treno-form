@@ -2,9 +2,7 @@
 
 
 
-submit.addEventListener('click',
-
-    function(){
+submit.addEventListener('click', function(){
 
     //raccogliamo il dato kilometri
     let km = document.getElementById('km').value;
@@ -13,8 +11,7 @@ submit.addEventListener('click',
     let eta = document.getElementById('eta').value;
 
     
- 
-
+    
 
     //inseriamo una costante che sarebbe il prezzo per kilometro
     const prezzoperkm = 0.21;//number
@@ -33,18 +30,18 @@ submit.addEventListener('click',
     //utilizziamo delle condizioni per fare degli sconti 
 
     //eta' minore di 18 anni
-    if(eta.value == "Minorenne"){
+    if(eta == 'min'){
         
         //pxb20 = variabile contenente il prezzo del biglietto scontato del 20%
         let sconto20 = prezzobiglietto * 0.20;//number
         
-        console.log('Sconto minorenne 20% =', parseFloat(pxb20.toFixed(2)),'euro');
+        console.log('Sconto minorenne 20% =', parseFloat(sconto20.toFixed(2)),'euro');
         //pxb20round = variabile contenente il prezzo del biglietto scontato del 20% mostrando fino alla seconda cifra decimale
         let sconto20arr = prezzobiglietto - sconto20;//number
         console.log('Totale con sconto applicato =',parseFloat(sconto20arr.toFixed(2)),'euro');
     
     }//eta' over 65
-    else if(eta.value == "Over 65"){
+    else if(eta == 'over'){
        
     //pxb40 = variabile contenente il prezzo del biglietto scontato del 40%
     let sconto40 = prezzobiglietto * 0.40;//number
@@ -55,7 +52,7 @@ submit.addEventListener('click',
     console.log('Totale con sconto applicato =',parseFloat(sconto40arr.toFixed(2)),'euro');
 
     }//eta' tra i 18 e i 65 anni
-    else if(eta.value == "Maggiorenne"){
+    else if(eta == 'default'){
 
     //stampiamo in console il prezzo del biglietto senza sconti
     console.log('nessuno sconto applicato');
